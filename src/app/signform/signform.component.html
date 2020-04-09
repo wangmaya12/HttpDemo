@@ -1,0 +1,40 @@
+<h1>Please fill below details for successful login!</h1>
+<form [formGroup]="form" (ngSubmit)="signup(form)">
+  <div class="form-group">
+    <label for="username">UserName</label
+    ><input
+      type="text"
+      class="form-control"
+      id="username"
+      formControlName="username"
+    />
+    <div
+      *ngIf="username.invalid && username.touched"
+      class="alert alert-danger"
+    >
+      <div *ngIf="username.errors.required">Username is required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label
+    ><input
+      type="password"
+      class="form-control"
+      id="password"
+      formControlName="password"
+    />
+    <div
+      *ngIf="password.invalid && password.touched"
+      class="alert alert-danger"
+    >
+      <div *ngIf="password.errors.required">Password is required.</div>
+    </div>
+  </div>
+  <button
+    class="btn btn-primary btn-sm"
+    [disabled]="form.invalid"
+    [routerLink]="['/home']"
+  >
+    Sign Up
+  </button>
+</form>

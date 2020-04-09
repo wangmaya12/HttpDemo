@@ -1,0 +1,14 @@
+<h1>List of my courses</h1>
+<input type="text" (keyup.enter)="CreateRecord(c)" #c class="form-control" />
+<ul class="list-group" class="list-group-item" *ngFor="let course of courses">
+  <button
+    @fade
+    (click)="RemoveRecord(course.id)"
+    class="btn btn-primary btn-sm"
+  >
+    Delete
+  </button>
+  {{
+    course.Name
+  }}
+</ul>
